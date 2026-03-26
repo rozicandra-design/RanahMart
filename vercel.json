@@ -8,6 +8,14 @@
   },
   "routes": [
     {
+      "src": "/build/(.*)",
+      "dest": "/public/build/$1"
+    },
+    {
+      "src": "/(.*\\.(css|js|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot))",
+      "dest": "/public/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/api/index.php"
     }
@@ -15,7 +23,7 @@
   "env": {
     "APP_NAME": "RanahMart",
     "APP_ENV": "production",
-    "APP_DEBUG": "false",
+    "APP_DEBUG": "true",
     "APP_URL": "https://ranah-mart.vercel.app",
     "APP_KEY": "base64:mJX3Q6I4lTbuF/5J65MzPVLmPkhj4bucikzeCz3pyDU=",
     "DB_CONNECTION": "mysql",
@@ -25,13 +33,14 @@
     "DB_USERNAME": "udin_projek_sinceblood",
     "DB_PASSWORD": "9ff50944726465e30eb4602fa75249e854f7ecbc",
     "CACHE_DRIVER": "file",
+    "CACHE_STORE": "file",
     "CACHE_FILE_PATH": "/tmp/cache",
     "SESSION_DRIVER": "cookie",
     "SESSION_LIFETIME": "120",
     "QUEUE_CONNECTION": "sync",
     "FILESYSTEM_DISK": "local",
     "LOG_CHANNEL": "stderr",
-    "LOG_LEVEL": "error",
+    "LOG_LEVEL": "debug",
     "VIEW_COMPILED_PATH": "/tmp/views",
     "SESSION_FILE_PATH": "/tmp/sessions"
   }
