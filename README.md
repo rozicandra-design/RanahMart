@@ -1,4 +1,3 @@
-# RanahMart
 # 🛒 RanahMart
 
 <p align="center">
@@ -126,24 +125,58 @@ poin            → users
 notifikasi      → users
 ```
 
-> 💡 Untuk ERD lengkap, lihat folder `database/migrations/` atau gunakan [dbdiagram.io](https://dbdiagram.io).
-
 ---
 
 ## 🖼️ Screenshot
 
-> 📌 *Tambahkan screenshot aplikasi kamu di sini*
-
+### 🌐 Publik
 | Halaman | Preview |
 |---|---|
-| Home / Beranda | *(tambahkan screenshot)* |
-| Dashboard Admin | *(tambahkan screenshot)* |
-| Dashboard Penjual | *(tambahkan screenshot)* |
-| Dashboard Pembeli | *(tambahkan screenshot)* |
-| Dashboard Dinas | *(tambahkan screenshot)* |
-| Halaman Produk | *(tambahkan screenshot)* |
-| Keranjang & Checkout | *(tambahkan screenshot)* |
-| Sertifikat UMKM | *(tambahkan screenshot)* |
+| Beranda | ![Beranda](public/screenshots/public/publik.png) |
+
+### 🧑‍💼 Admin
+| Halaman | Preview |
+|---|---|
+| Dashboard | ![Dashboard Admin](public/screenshots/admin/dasboar.png) |
+| Kelola Iklan | ![Kelola Iklan](public/screenshots/admin/kelola%20iklan.png) |
+| Laporan | ![Laporan](public/screenshots/admin/laporan.png) |
+| Transaksi | ![Transaksi](public/screenshots/admin/transasksi.png) |
+| Pengaturan | ![Pengaturan](public/screenshots/admin/seting.png) |
+
+### 🏪 Penjual
+| Halaman | Preview |
+|---|---|
+| Dashboard | ![Dashboard Penjual](public/screenshots/penjual/dasboar.png) |
+| Kelola Produk | ![Kelola Produk](public/screenshots/penjual/kelolaproduk.png) |
+| Keuangan & Saldo | ![Keuangan](public/screenshots/penjual/keuangan%20saldo.png) |
+| Laporan & Analitik | ![Laporan](public/screenshots/penjual/laporan%20analitik.png) |
+| Ruang Iklan | ![Iklan](public/screenshots/penjual/ruang%20iklan.png) |
+| Promosi & Voucher | ![Promo](public/screenshots/penjual/promosi%20dan%20vocer.png) |
+| Profil | ![Profil](public/screenshots/penjual/profile.png) |
+| Dokumen Toko | ![Dokumen](public/screenshots/penjual/dokumen.png) |
+| Notifikasi | ![Notifikasi](public/screenshots/penjual/notif.png) |
+| Pengaturan | ![Pengaturan](public/screenshots/penjual/seting.png) |
+
+### 🛍️ Pembeli
+| Halaman | Preview |
+|---|---|
+| Dashboard | ![Dashboard Pembeli](public/screenshots/pembeli/dasbor.png) |
+| Profil | ![Profil](public/screenshots/pembeli/profile.png) |
+| Alamat | ![Alamat](public/screenshots/pembeli/alamat.png) |
+| Voucher | ![Voucher](public/screenshots/pembeli/vocer.png) |
+| Poin Reward | ![Poin](public/screenshots/pembeli/poin.png) |
+| Pengaturan | ![Pengaturan](public/screenshots/pembeli/seting.png) |
+
+### 🏛️ Dinas
+| Halaman | Preview |
+|---|---|
+| Dashboard | ![Dashboard Dinas](public/screenshots/dinas/dasbor.png) |
+| Verifikasi UMKM | ![Verifikasi](public/screenshots/dinas/verifikasi.png) |
+| Monitoring | ![Monitoring](public/screenshots/dinas/monitoring.png) |
+| Statistik Wilayah | ![Statistik](public/screenshots/dinas/ststis.png) |
+| Pengumuman | ![Pengumuman](public/screenshots/dinas/pengumuman.png) |
+| Rekap & Laporan | ![Rekap](public/screenshots/dinas/rekap.png) |
+| Pengaturan | ![Pengaturan](public/screenshots/dinas/seting.png) |
 
 ---
 
@@ -287,18 +320,25 @@ RanahMart/
 ├── database/
 │   ├── migrations/                # Semua migrasi tabel
 │   └── seeders/                   # DatabaseSeeder & UserSeeder
+├── public/
+│   └── screenshots/               # Screenshot aplikasi
+│       ├── admin/
+│       ├── penjual/
+│       ├── pembeli/
+│       ├── dinas/
+│       └── public/
 ├── resources/views/
-│   ├── admin/                     # Views admin
-│   ├── pembeli/                   # Views pembeli
-│   ├── penjual/                   # Views penjual
-│   ├── dinas/                     # Views dinas
-│   ├── public/                    # Views halaman publik
-│   ├── auth/                      # Views login & register (multi-step UMKM)
-│   ├── components/                # Reusable Blade components
-│   ├── layouts/                   # Layout utama (app, auth, dashboard)
-│   └── errors/                    # Halaman error (403, 404, 500)
+│   ├── admin/
+│   ├── pembeli/
+│   ├── penjual/
+│   ├── dinas/
+│   ├── public/
+│   ├── auth/
+│   ├── components/
+│   ├── layouts/
+│   └── errors/
 └── routes/
-    └── web.php                    # Semua routing aplikasi
+    └── web.php
 ```
 
 ---

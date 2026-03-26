@@ -21,7 +21,7 @@ class IklanController extends Controller
             'aktif'           => Iklan::where('status', 'aktif')->count(),
             'pendapatan'      => Iklan::where('status', 'aktif')
                                     ->whereMonth('created_at', now()->month)
-                                    ->sum('biaya'),
+                                    ->sum('harga'),
             'total_pengiklan' => Iklan::distinct('toko_id')->count('toko_id'),
         ];
 

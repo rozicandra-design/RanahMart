@@ -28,7 +28,7 @@ class LaporanController extends Controller
             'total_komisi'     => $totalTransaksi * 0.03,
             'pendapatan_iklan' => Iklan::whereMonth('created_at', $bulan)
                                     ->whereYear('created_at', $tahun)
-                                    ->sum('biaya') ?? 0,
+                                    ->sum('harga') ?? 0, // fix: biaya -> harga
         ];
 
         $chartBulanan = collect(range(1, 12))->map(fn($m) => [
@@ -44,33 +44,33 @@ class LaporanController extends Controller
     }
 
     public function export()
-{
-    $bulan = request('bulan', now()->month);
-    $tahun = request('tahun', now()->year);
+    {
+        $bulan = request('bulan', now()->month);
+        $tahun = request('tahun', now()->year);
 
-    $totalTransaksi = Transaksi::whereMonth('created_at', $bulan)
-                        ->whereYear('created_at', $tahun)
-                        ->sum('total') ?? 0;
+        $totalTransaksi = Transaksi::whereMonth('created_at', $bulan)
+                            ->whereYear('created_at', $tahun)
+                            ->sum('total') ?? 0;
 
-    $totalPesanan = Transaksi::whereMonth('created_at', $bulan)
-                        ->whereYear('created_at', $tahun)
-                        ->count();
+        $totalPesanan = Transaksi::whereMonth('created_at', $bulan)
+                            ->whereYear('created_at', $tahun)
+                            ->count();
 
-    $stats = [
-        'total_transaksi'  => $totalTransaksi,
-        'total_pesanan'    => $totalPesanan,
-        'total_komisi'     => $totalTransaksi * 0.03,
-        'pendapatan_iklan' => Iklan::whereMonth('created_at', $bulan)
-                                ->whereYear('created_at', $tahun)
-                                ->sum('biaya') ?? 0,
-    ];
+        $stats = [
+            'total_transaksi'  => $totalTransaksi,
+            'total_pesanan'    => $totalPesanan,
+            'total_komisi'     => $totalTransaksi * 0.03,
+            'pendapatan_iklan' => Iklan::whereMonth('created_at', $bulan)
+                                    ->whereYear('created_at', $tahun)
+                                    ->sum('harga') ?? 0, // fix: biaya -> harga
+        ];
 
-    $namaBulan = date('F', mktime(0, 0, 0, $bulan, 1));
+        $namaBulan = date('F', mktime(0, 0, 0, $bulan, 1));
 
-    $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('admin.laporan.pdf', compact(
-        'stats', 'namaBulan', 'tahun'
-    ));
+        $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('admin.laporan.pdf', compact(
+            'stats', 'namaBulan', 'tahun'
+        ));
 
-    return $pdf->download("laporan-{$namaBulan}-{$tahun}.pdf");
-}
+        return $pdf->download("laporan-{$namaBulan}-{$tahun}.pdf");
+    }
 }
