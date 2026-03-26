@@ -25,11 +25,14 @@
     "DB_USERNAME": "udin_projek_sinceblood",
     "DB_PASSWORD": "9ff50944726465e30eb4602fa75249e854f7ecbc",
     "CACHE_DRIVER": "file",
+    "CACHE_FILE_PATH": "/tmp/cache",
     "SESSION_DRIVER": "cookie",
     "SESSION_LIFETIME": "120",
     "QUEUE_CONNECTION": "sync",
     "FILESYSTEM_DISK": "local",
     "LOG_CHANNEL": "stderr",
-    "LOG_LEVEL": "error"
+    "LOG_LEVEL": "error",
+    "VIEW_COMPILED_PATH": "/tmp/views",
+    "SESSION_FILE_PATH": "/tmp/sessions"
   }
 }
